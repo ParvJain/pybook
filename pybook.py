@@ -1,3 +1,5 @@
+from subprocess import call
+
 '''
 PyBook is a mini-project implementation of a phonebook in Python 
 '''
@@ -23,7 +25,6 @@ def delete():
     
 
 def main():
-    from subprocess import call 
     call(["clear"])
     print("Welcome to PyBook - The Python Phonebook\n")
     print("(C)reate contact\n(D)elete Contact\n(V)iew Contact\n(S)earch Contact\n")

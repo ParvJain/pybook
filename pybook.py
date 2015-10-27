@@ -7,7 +7,18 @@ def create():
     email    = input("Enter e-mail address: ");
     birthday = input("Enter birthday (DD/MM): ");
     file = open('data.pb','a')
-    file.write(name+','+number+','+email+','+birthday)
+    file.write(name+','+number+','+email+','+birthday+'\n')
+    file.close()
+    
+def delete():
+    name = input("Enter name of contact to delete: ")
+    file = open('data.pb','r')
+    lines = file.readlines()
+    file.close()
+    file = open('data.pb','w')
+    for line in lines:
+        if not line.startswith(name):
+            file.write(line)
     file.close()
     
 
@@ -19,6 +30,8 @@ def main():
     choice = input("Enter a valid choice: ");
     if choice=='C':
         create()
+    elif choice=='D':
+        delete()
     else:
         quit()
 
